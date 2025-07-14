@@ -6,6 +6,8 @@ module "resource_group" {
 
 module "resource_group" {
   source              = "../module/azurerm_resource_group"
+
+  resource_group_name = "dhondu4"
   resource_group_name = "dhondu1"
   location            = "east us"
 }
