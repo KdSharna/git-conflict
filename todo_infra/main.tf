@@ -14,6 +14,13 @@ module "resource_group" {
 
 module "resource_group" {
   source              = "../module/azurerm_resource_group"
+  resource_group_name = "dhondu5"
+  location            = "east us"
+}
+
+
+module "resource_group" {
+  source              = "../module/azurerm_resource_group"
   resource_group_name = "dhondu2"
   location            = "east us"
 }
