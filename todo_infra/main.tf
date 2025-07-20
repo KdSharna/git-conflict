@@ -1,27 +1,6 @@
 module "resource_group" {
   source              = "../module/azurerm_resource_group"
-  resource_group_name = "dhondu"
-  location            = "east us"
-}
-
-module "resource_group" {
-  source              = "../module/azurerm_resource_group"
-
-  resource_group_name = "dhondu4"
-  resource_group_name = "dhondu1"
-  location            = "east us"
-}
-
-module "resource_group" {
-  source              = "../module/azurerm_resource_group"
-  resource_group_name = "dhondu5"
-  location            = "east us"
-}
-
-
-module "resource_group" {
-  source              = "../module/azurerm_resource_group"
-  resource_group_name = "dhondu2"
+  resource_group_name = "pondu"
   location            = "east us"
 }
 
@@ -34,32 +13,6 @@ module "virtual_network" {
   address_space        = ["10.0.0.0/16"]
 }
 
-module "virtual_network" {
-  depends_on           = [module.resource_group]
-  source               = "../module/azurerm_vnet"
-  virtual_network_name = "pondu2_vnet"
-  resource_group_name  = "pondu"
-  location             = "east us 2"
-  address_space        = ["10.0.0.0/16"]
-}
-
-module "virtual_network" {
-  depends_on           = [module.resource_group]
-  source               = "../module/azurerm_vnet"
-  virtual_network_name = "pondu1_vnet"
-  resource_group_name  = "pondu"
-  location             = "east us 2"
-  address_space        = ["10.0.0.0/16"]
-}
-
-module "virtual_network" {
-  depends_on           = [module.resource_group]
-  source               = "../module/azurerm_vnet"
-  virtual_network_name = "pondu1_vnet"
-  resource_group_name  = "pondu4"
-  location             = "east us 2"
-  address_space        = ["10.0.0.0/16"]
-}
 module "frontend_subnet" {
   depends_on           = [module.resource_group, module.virtual_network]
   source               = "../module/azurerm_subnet"
