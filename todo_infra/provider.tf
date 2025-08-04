@@ -6,7 +6,12 @@ terraform {
       version = "4.34.0"
     }
   }
-
+ backend "azurerm" {
+    resource_group_name  = "ponda"
+    storage_account_name = "tattu21"
+    container_name       = "con99"
+    key                  = "kapil.tfstate"
+  }
 }
 provider "azurerm" {
   features {}
