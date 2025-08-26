@@ -3,12 +3,6 @@ module "resource_group" {
   resource_group_name = "pondu"
   location            = "east us"
 }
-module "resource_group" {
-  source              = "../module/azurerm_resource_group"
-  resource_group_name = "pondu1"
-  location            = "east us"
-}
-
 
 module "virtual_network" {
   depends_on           = [module.resource_group]
