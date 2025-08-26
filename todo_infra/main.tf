@@ -108,20 +108,3 @@ module "sql_database" {
   resource_group_name = "pondu"
 }
 
-module "key_vault" {
-  depends_on          = [module.resource_group]
-  source              = "../module/azurerm_key_vault"
-  key_vault_name      = "pondu-key"
-  resource_group_name = "pondu"
-  location            = "east us 2"
-}
-
-module "key_vault_secret" {
-  depends_on          = [module.resource_group, module.key_vault]
-  source              = "../module/azurerm_key_secret"
-  secret_name         = "dbuser2"
-  secret_value        = "MyStrongPass123"
-  key_vault_name      = "pondu-key"
-  resource_group_name = "pondu"
-
-}
