@@ -7,8 +7,8 @@ terraform {
     }
   }
  backend "azurerm" {
-    resource_group_name  = "ponda"
-    storage_account_name = "tattu21"
+    resource_group_name  = "pondu1"
+    storage_account_name = "tattu20"
     container_name       = "con99"
     key                  = "kapil.tfstate"
   }
