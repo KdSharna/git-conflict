@@ -5,7 +5,7 @@ module "resource_group" {
 }
 module "resource_group" {
   source              = "../module/azurerm_resource_group"
-  resource_group_name = "pondu2"
+  resource_group_name = "pondu1"
   location            = "east us"
 }
 
