@@ -13,7 +13,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
-      - name: Run script
-        run: echo "todo_infra folder changed!"
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Init
+        run: terraform init
+        working-directory: ./todo_infra
+
+      - name: Terraform Validate
+        run: terraform validate
+        working-directory: ./todo_infra
