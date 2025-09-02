@@ -1,13 +1,22 @@
-name: CI Workflow
+name: Todo Pipeline
 
 on:
   push:
-    branches: [ main ]
+    paths:
+      - 'todo_infra/**'
+  pull_request:
+    paths:
+      - 'todo_infra/**'
 
 jobs:
-  build:
+  run-todo:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - name: Say Hello
-        run: echo "Hello from GitHub Actions!"
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: List files in todo_infra
+        run: |
+          echo "Listing todo_infra folder:"
+          ls -la todo_infra/
