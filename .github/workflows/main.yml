@@ -9,14 +9,11 @@ on:
       - 'todo_infra/**'
 
 jobs:
-  run-todo:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
+      - name: Checkout Repo
         uses: actions/checkout@v3
 
-      - name: List files in todo_infra
-        run: |
-          echo "Listing todo_infra folder:"
-          ls -la todo_infra/
+      - name: Run script
+        run: echo "todo_infra folder changed!"
